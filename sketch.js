@@ -127,6 +127,7 @@ function draw() {
       var a = (Math.sin(2*PI*time/20)+1)/2;
       midiOutput.sendKeyAftertouch(36,'all',a);
       midiOutput.sendKeyAftertouch(52,'all',a);
+      midiOutput.sendKeyAftertouch(55,'all',a);
       midiOutput.sendKeyAftertouch(57,'all',a);
       midiOutput.sendKeyAftertouch(62,'all',a);
       time++;
@@ -169,6 +170,7 @@ function enableMidi() {
         midiOutput = WebMidi.outputs[i];
         midiOutput.send(noteOnStatus,[36,100]);
         midiOutput.send(noteOnStatus,[52,100]);
+        midiOutput.send(noteOnStatus,[55,100]);
         midiOutput.send(noteOnStatus,[57,100]);
         midiOutput.send(noteOnStatus,[62,100]);
         midi = 1;
